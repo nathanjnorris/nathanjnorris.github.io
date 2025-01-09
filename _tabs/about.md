@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 2
 ---
 
-I'm a Solution Architect based in Australia, specializing in cloud-native and hybrid infrastructure solutions. With experience across public and private sectors, I help organisations navigate complex technology landscapes and design scalable, resilient systems.
+I'm a Solution Architect based in Australia, with work experience in Canada and New Zealand, specializing in cloud-native and hybrid infrastructure solutions. I've helped public and private sector organisations navigate complex technology landscapes to design and operate scalable, resilient, and secure systems.
 
 ## Expertise
 
