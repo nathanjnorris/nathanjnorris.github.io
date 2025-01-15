@@ -11,7 +11,7 @@ From April last year, I completed a two month Creative Technology residency at [
 In the first month, our cohort built a solid foundation in electronics, soldering, CAD, and 3D printing skills in weekly classes.
 Then in the second month we worked on our own projects, with weekly drop in session with our mentor.
 
-I went into the residency with the bringing a doof stick to life - a fun stick you would take to a bush doof (outdoor music festival) to add art to the dance floor. It can also help your friends find their way back to you, as doofs are usually held in remote areas with little if any mobile coverage.
+I went into the residency with the idea of bringing a doof stick to life - a fun stick you would take to a bush doof (outdoor music festival) to add art to the dance floor. It can also help your friends find their way back to you, as doofs are usually held in remote areas with little if any mobile coverage.
 
 I took inspiration for this project from Ruiz Brothers' [NeoPixel Infinity Mirror Coaster](https://learn.adafruit.com/infinity-mirror-coaster) and [Lightsaber Prop-Maker RP2040](https://learn.adafruit.com/lightsaber-rp2040/)
 
@@ -98,7 +98,7 @@ I was really happy with how this all came together, albeit with a bit of elbow g
 At the end of July last year, some friends were visting my partner and I in Vancouver, and we went to [Shambhala Music Festival](https://www.shambhalamusicfestival.com/).
 It was finally time to take the doof stick for a spin!
 
-![Nathan at a music festival, shoving the doof stick into someone's face](/assets/img/posts/party.jpg){: width="972" height="589" .w-90 .normal}
+![Nathan at a music festival, shoving the doof stick into a friend's face](/assets/img/posts/party.jpg){: width="972" height="589" .w-90 .normal}
 
 It was hit and a magnet for the electronics nerds out on the dancefloor, as plenty of people were chatting my ear off about microcontrollers and 3D printing.
 It also worked really well - the battery lasted well over two nights before needing to be recharged, and the case held up drops and the wear and tear of the dance floor.
