@@ -19,7 +19,7 @@ I took inspiration for this project from Ruiz Brothers' [NeoPixel Infinity Mirro
 {% include embed/youtube.html id='JsKdECeikFQ' %}
 
 ## Software
-The microcontroller I used in this project can run CircuitPython and Arduino code. 
+The [RP2040 microcontroller](https://www.adafruit.com/product/5768) I used in this project can run CircuitPython and Arduino code. 
 I'm more familiar with Python than C++, so CircuitPython was easier for me to adopt.
 I began with a proof of concept, using two potentiometers to adjust the brightness and colour of the embedded LED on the board:
 {% include embed/youtube.html id='8pinbfl5puA' %}
