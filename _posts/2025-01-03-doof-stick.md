@@ -1,6 +1,6 @@
 ---
 title: Doof stick
-description: An on-the-go infinity mirror
+description: Build your own on-the-go infinity mirror
 date: 2025-01-03 09:00 +1000
 tags: [electronics, microcontrollers, python, AI, CAD, 3D printing]
 image:
