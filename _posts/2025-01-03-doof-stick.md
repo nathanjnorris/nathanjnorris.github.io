@@ -19,7 +19,7 @@ I took inspiration for this project from Ruiz Brothers' [NeoPixel Infinity Mirro
 {% include embed/youtube.html id='JsKdECeikFQ' %}
 
 ## Software
-The microcontroller I used in this project can run CircuitPython and Arduino code. 
+The [RP2040 microcontroller](https://www.adafruit.com/product/5768) I used in this project can run CircuitPython and Arduino code. 
 I'm more familiar with Python than C++, so CircuitPython was easier for me to adopt.
 I began with a proof of concept, using two potentiometers to adjust the brightness and colour of the embedded LED on the board:
 {% include embed/youtube.html id='8pinbfl5puA' %}
@@ -53,6 +53,8 @@ If you have [Bambu Studio](https://bambulab.com/en/download/studio) on your comp
 This diagram was created using the software package [Fritzing](https://fritzing.org/download/). It provides a visual reference for wiring of the components:
 
 ![Wiriing diagram of the doof stick](/assets/img/posts/wiring.png){: width="972" height="589" .w-90 .normal}
+
+I am an architect at heart, so I really enjoyed creating this diagram. It also made life a lot easier when it came time to solder the components together:
 
 ![Microcontroller wired to components, and housed within the printed brain box](/assets/img/posts/wiring_irl.jpg){: width="972" height="589" .w-90 .normal}
 
