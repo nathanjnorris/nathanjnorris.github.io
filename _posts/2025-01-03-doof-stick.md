@@ -54,6 +54,8 @@ This diagram was created using the software package [Fritzing](https://fritzing.
 
 ![Wiriing diagram of the doof stick](/assets/img/posts/wiring.png){: width="972" height="589" .w-90 .normal}
 
+I am an architect at heart, so I really enjoyed creating this diagram. It also made life a lot easier when it came time to solder the components together:
+
 ![Microcontroller wired to components, and housed within the printed case](/assets/img/posts/wiring_irl.jpg){: width="972" height="589" .w-90 .normal}
 
 An editable Fritzing file is [available on GitHub](https://github.com/nathanjnorris/doofstick/raw/refs/heads/main/Fritzing/wiring.fzz)
