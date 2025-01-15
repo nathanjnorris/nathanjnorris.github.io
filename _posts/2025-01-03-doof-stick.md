@@ -25,7 +25,7 @@ I began with a proof of concept, using two potentiometers to adjust the brightne
 {% include embed/youtube.html id='8pinbfl5puA' %}
 Once I got a hang of it all, I collaborated with [Claude](https://claude.ai) to speed up my development, and had some really nice moments:
 
-![A multimodal chat with Claude, with the LLM responding to a picture of the code it generated](/assets/img/posts/claude.png){: width="972" height="589" .w-75 .normal}
+![A multimodal chat with Claude, with the AI responding to a picture at runtime of the code it generated](/assets/img/posts/claude.png){: width="972" height="589" .w-75 .normal}
 
 The code for this project is [available on GitHub.](https://github.com/nathanjnorris/doofstick/blob/main/code.py)
 
@@ -33,7 +33,7 @@ The code for this project is [available on GitHub.](https://github.com/nathanjno
 After sketching out a few ideas on paper, I went straight into building out a model of the doof stick using [Autodesk Fusion](https://www.autodesk.com/products/fusion-360/personal).
 I wanted to iterate by printing out sections of my design to ensure it would all integrate. After a few rounds of trial and error, I landed on the final design:
 
-![CAD model of the doof stick](/assets/img/posts/fusion.png){: width="972" height="589" .w-90 .normal}
+![CAD model of the doof stick case](/assets/img/posts/fusion.png){: width="972" height="589" .w-90 .normal}
 
 The case for this project has three main components:
   - Ring case for the LED strip and mirror discs
@@ -54,7 +54,7 @@ This diagram was created using the software package [Fritzing](https://fritzing.
 
 ![Wiriing diagram of the doof stick](/assets/img/posts/wiring.png){: width="972" height="589" .w-90 .normal}
 
-![Microcontroller wired to components, and housed within the printed case](/assets/img/posts/wiring_irl.jpg){: width="972" height="589" .w-90 .normal}
+![Microcontroller wired to components, and housed within the printed brain box](/assets/img/posts/wiring_irl.jpg){: width="972" height="589" .w-90 .normal}
 
 An editable Fritzing file is [available on GitHub](https://github.com/nathanjnorris/doofstick/raw/refs/heads/main/Fritzing/wiring.fzz)
 
@@ -98,8 +98,8 @@ I was really happy with how this all came together, albeit with a bit of elbow g
 At the end of July last year, some friends were visting my partner and I in Vancouver, and we went to [Shambhala Music Festival](https://www.shambhalamusicfestival.com/).
 It was finally time to take the doof stick for a spin!
 
-![Nathan at a music festival, shoving the doof stick into a friend's face](/assets/img/posts/party.jpg){: width="972" height="589" .w-90 .normal}
+![Nathan at a music festival, shoving the doof stick into his partner's face](/assets/img/posts/party.jpg){: width="972" height="589" .w-90 .normal}
 
-It was hit and a magnet for the electronics nerds out on the dancefloor, as plenty of people were chatting my ear off about microcontrollers and 3D printing.
+It was hit and a magnet for the electronics nerds out on the dance floor, as plenty of people were chatting my ear off about microcontrollers and 3D printing.
 It also worked really well - the battery lasted well over two nights before needing to be recharged, and the case held up drops and the wear and tear of the dance floor.
 I'm looking forward to joining another makerspace soon and working on another project, and I'll be sure to post more about my next creator experience!
