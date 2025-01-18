@@ -16,10 +16,10 @@ image:
 
 
 # Top attributes
-## 
+
 
 # Key attributes
-- 
+  
 
 # Components
 ## Networking
@@ -56,23 +56,25 @@ services:
       - gluetun
 ```
 
-## Monitoring
-[Uptime Kuma](https://uptime.kuma.pet/) is a monitoring tool, which I use to monitor for HTTP(S) keyword and container states. 
-Uptime Kuma is integrated with Pushbullet, and whenever a service is unavailable after two 60 second intervals, a push notification is sent to my phone:
-
-![Push notification sent when there's service downtime](/assets/img/posts/push.png){: width="972" height="589" .w-50 .normal}
-
-
-You can also use Uptime Kuma to publish a [service status dashboard](https://status.nathanjn.com/status/servarr), that is available for users:
- 
-![Uptime Kuma's service status dashboard](/assets/img/posts/status.png){: width="972" height="589" .w-90 .normal}
- 
-
-
-Plex server app
-
 ## Backups
-Kopia The containers' configurations is automatically backed up to Cloudflare R2 
+All containers store their configuration data within the */config* directory:
+
+```yaml
+services:
+  wizarr:
+    volumes:
+      - /home/nathan/servarr/config/wizarr-config:/data/database
+```
+
+This is then mounted to Kopia as a read-only volume:
+
+```yaml
+services:
+  kopia:
+      volumes:
+        - /home/nathan/servarr/config:/data:ro
+```
+A overnight backup of all container config is taken, then stored in Cloudflare R2 (S3-compatible storage), and retained according to a schedule.
 
 ## Maintainability
 
@@ -81,19 +83,36 @@ CI/CD
 
 As the mounted disk has 8TB of space,  I use the Maintainerr container to automatically cleanup media that has been watched (or ignored) by the user who requested it. 
 
+## Monitoring
+[Uptime Kuma](https://uptime.kuma.pet/) is a monitoring tool, which I use to monitor for HTTP(S) keyword and container states. 
+Uptime Kuma is integrated with Pushbullet, and whenever a service is unavailable after two 60 second intervals, a notification is sent to my phone:
+
+![Push notification sent when there's service downtime](/assets/img/posts/push.png){: width="972" height="589" .w-50 .normal}
+
+
+I also use Uptime Kuma to publish a [service status dashboard](https://status.nathanjn.com/status/servarr) that is available for users:
+ 
+![Uptime Kuma's service status dashboard](/assets/img/posts/status.png){: width="972" height="589" .w-90 .normal}
+ 
+With a [Plex Pass](https://www.plex.tv/plex-pass/), you can use the [Plex Dash](https://play.google.com/store/apps/details?id=tv.plex.labs.dash&hl=en_NZ) app to monitor host metrics (bandwith, processor and memory) and any current user activity.
 
 ## Operations
-The system is plug and play - all you need to do is provide the servarr with an ethernet connection and power, and on startup the drive is mounted and Docker is configured to start all the containers.
+The system is plug and play - all you need to do is provide the servarr with an ethernet connection and power. On boot, [fstab](https://www.redhat.com/en/blog/etc-fstab) is configured to mount the attached storage. Docker starts by default on Ubuntu, and all the containers are configured to always restart unless manually stopped:
+```yaml
+services:
+  maintainerr:
+    restart: always
+```
 
-If and when a container exits unexpectedly, you can SSH into the servarr from a web browser and run a Docker command to bring it back up. 
+If and when a container exits unexpectedly and cannot restart itself, you can SSH into the servarr from a web browser and run a *docker compose up -d* command to bring the container back to the correct state:
 
-When I want to onboard a new user, I use the Wizarr 
+![SSH in a browser and starting a container that unexpectedly existed](/assets/img/posts/ssh.png)
 
-The Tautulli container is primarily used for monitoring Plex user data, but it can also be integrated with an SMTP relay to send newsletters when media has been recently added.
-I've integrated Tautulli with SendGrid, but I use it for notifying to all users of any extended period of outages (e.g. when we move house). 
-
+SSH access via Cloudflare is restricted to either my Google identity, or an identity created for GitHub Actions. 
+An attacker would need to compromise either of these identities, and the private key of a user on the servarr, in order to gain unauthorized access.
 
 ## Security
+
 ### Updates
 I've installed Ubuntu Pro (22.04 LTS) on the servarr, and enabled Extended Security Maintainance (ESM).
 A nightly cronjob then applies application security updates and kernel livepatching for high and critical CVEs.
@@ -111,10 +130,15 @@ Any inbound traffic to the servarr is proxied by Cloudflare, which handles SSL c
 
 ## Cost
 
+## User experience
+When I want to onboard a new user to my Plex library and Overseerr I use the Wizarr app, which guides users on how to request media and on how to access the Plex client.
+
+The Tautulli container is primarily used for monitoring Plex user data, but it can also be integrated with an SMTP relay to send newsletters when media has been recently added. I've integrated Tautulli with SendGrid, but I currently only use it for notifying to all users of any extended outages (e.g. when we move house). 
+
 
 
 # Further work
- - External monitoring
+ - External + metric monitoring
  - Network segmentation
  - Seamless SSH
  - NAS 
