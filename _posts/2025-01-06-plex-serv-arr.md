@@ -8,7 +8,7 @@ image:
   alt: An architecture diagram of the servarr soltuion
 mermaid: true
 ---
-My friends and family love watching public domain media on the [Internet Archive](https://archive.org/details/prelinger). I wanted to work on a project that could showcase my cloud skills and deliver them an enterprise-grade media streaming service. So I set out to create the **servarr**, to provide my loved ones with an easy to use service to request and watch openly licensed media.
+My friends and family love torrenting public domain media from the [Internet Archive](https://archive.org/details/prelinger). I wanted to work on a project that could showcase my cloud skills and deliver them an enterprise-grade media streaming service. So I set out to create the **servarr**, to provide my loved ones with an easy to use service to request and watch openly licensed media.
 
 # Design decisions
 I had previously experimented with a Plex Media Server, having installed the app onto a Raspberry Pi. I found it hard to manage the different apps installed on that OS, so I knew I wanted to rebuild this setup using containerised apps instead. I wanted to [KISS](https://en.wikipedia.org/wiki/KISS_principle), so I opted to define my multi-container service using Docker Compose instead of Kubernetes. 
