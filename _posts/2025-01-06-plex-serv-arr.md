@@ -120,7 +120,7 @@ As a part of this project, I contributed some code to [@and-fm's Cloudflare SSH 
 [Uptime Kuma](https://uptime.kuma.pet/) is a monitoring tool, which I use to monitor for HTTP(S) keyword and container states. 
 Uptime Kuma is integrated with Pushbullet, and whenever a service is unavailable after two 60 second intervals, a notification is sent to my phone:
 
-![Push notification sent when there's service downtime](/assets/img/posts/push.png){: width="972" height="589" .w-50 .normal}
+![Push notification sent when there's service downtime](/assets/img/posts/push.png){: width="972" height="589" .w-75 .normal}
 
 
 I also use Uptime Kuma to publish a [service status dashboard](https://status.nathanjn.com/status/servarr) that is available for users:
