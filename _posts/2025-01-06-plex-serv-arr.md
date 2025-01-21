@@ -103,7 +103,7 @@ Secrets are stored in the Terraform Cloud workspace, and then configured as repo
     A[PR created] --> B[Commit pushed]
     B --> C[Terraform Plan]
     C --> D{Plan OK?}
-    D -- Yes --> E[Merge]
+    D -- Yes --> E[Merge PR]
     D -- No --> B
 ```
 
