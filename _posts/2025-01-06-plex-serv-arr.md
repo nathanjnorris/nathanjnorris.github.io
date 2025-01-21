@@ -10,7 +10,7 @@ mermaid: true
 ---
 My friends and family love torrenting public domain media from the [Internet Archive](https://archive.org/details/prelinger). I wanted to work on a project that could showcase my skills and deliver them an enterprise-grade media streaming service. So I set out to create the **servarr**, to provide my loved ones with an easy to use service to request and watch openly licensed media.
 
-# Design decisions
+# Key design decision
 I had previously experimented with a Plex Media Server, having installed the app onto a Raspberry Pi. I found it hard to manage the different apps installed on that OS, so I knew I wanted to rebuild this setup using containerised apps instead. I wanted to [KISS](https://en.wikipedia.org/wiki/KISS_principle), so I opted to define my multi-container service using Docker Compose instead of Kubernetes, as the apps were residing on a single host.
 
 # Solution components
@@ -53,7 +53,7 @@ resource "cloudflare_tunnel_config" "servarr_tunnel" {
 }
 ```
 
-The Plex container is the only one that allows ingress traffic, as I wanted my TV, that can reach the host locally, to access content without going over the internet. The Plex container's port is mapped to the host, which allows for inbound private traffic to reach Plex:
+The Plex container is the only one that allows ingress traffic, as I wanted my TV that can reach the host locally, to access content without going over the internet. The Plex container's port is mapped to the host, which allows for inbound private traffic to reach Plex:
 
 ```yaml
 services:
@@ -93,7 +93,7 @@ services:
 A overnight backup of all container config is taken, then stored in Cloudflare R2 (S3-compatible storage), and retained according to a schedule.
 
 ## Maintainability
-The repo for this prject is avaialble on [GitHub](https://github.com/nathanjnorris/servarr). It contains:
+The repo for this project is avaialble on [GitHub](https://github.com/nathanjnorris/servarr). It contains:
   - The Terraform configurations for [Cloudflare](https://github.com/nathanjnorris/servarr/blob/main/cloudflare.tf), and [GitHub](https://github.com/nathanjnorris/servarr/blob/main/github.tf) itself. 
   - [GitHub Actions workflows](https://github.com/nathanjnorris/servarr/tree/main/.github/workflows)
   - The [Docker Compose file](https://github.com/nathanjnorris/servarr/blob/main/docker-compose.yml) that defines the multi-container apps that make up the servarr.
@@ -109,7 +109,7 @@ Secrets are stored in the Terraform Cloud workspace, and then configured as repo
     D -- No --> B
 ```
 
-As a part of this project, I contributed some code to [@and-fm's Cloudflare SSH Action](https://github.com/and-fm/cloudflared-ssh-action) which lets you SSH into a server behind a Cloudflare Tunnel and run a command. If a PR is merged, then CD workflow is triggered, and a apply run occurs in Terraform Cloud. Then the workflow [SSH's into the servarr](https://github.com/and-fm/cloudflared-ssh-action) host to pull the latest changes to the main branch, and then restarts the containers with the latest changes to the Docker Compose file:
+As a part of this project, I contributed some code to [@and-fm's Cloudflare SSH Action](https://github.com/and-fm/cloudflared-ssh-action) which lets you SSH into a server behind a Cloudflare Tunnel and run a command. If a PR is merged, the CD workflow is triggered, and a apply run occurs in Terraform Cloud. Then the workflow [SSH's into the servarr](https://github.com/and-fm/cloudflared-ssh-action) host to deploy the latest changes to the main branch, and then restarts the containers with the latest changes to the Docker Compose file:
 ```mermaid
   flowchart LR
     A[PR merged] --> B[Terraform Apply]
@@ -214,7 +214,7 @@ Apart from electricity and home internet, the only operational cost for this pro
 My usage of the Github, Terraform Cloud, Cloudflare, SendGrid, and Pushbullet are all within the limits of their free plans. 
 
 ### ROI
-As of the time of writing, a Netflix Premium Plan costs CA$23/mth. It should take just over 3 years for this project to break-even, when compared to a single household with a Netflix subscription. Theoretcally, that break-even point could occur sooner if more of my users cancel their streaming services and only use the servarr.
+As of the time of writing, a Netflix Premium Plan costs CA$23/mth. It should take just over 3 years for this project to break-even, when compared to a single household with a Netflix subscription. Theoretically, that break-even point could occur sooner if more of my users cancel their streaming services and only use the servarr.
 
 ## Further work
 
