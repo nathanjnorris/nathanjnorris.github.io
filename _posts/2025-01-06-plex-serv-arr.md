@@ -49,6 +49,8 @@ resource "cloudflare_tunnel_config" "servarr_tunnel" {
       hostname = "plex.nathanjn.com"
       service  = "http://plex:32400"
     }
+  }
+}
 ```
 
 The Plex container is the only one that allows ingress traffic, as I wanted my TV, that can reach the host locally, to access content without going over the internet. The Plex container's port is mapped to the host, which allows for inbound private traffic to reach Plex:
