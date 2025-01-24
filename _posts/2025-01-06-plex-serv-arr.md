@@ -92,7 +92,7 @@ services:
 ```
 A overnight backup of all container config is taken, then stored in Cloudflare R2 (S3-compatible storage), and retained according to a schedule.
 
-## Maintainability
+## CI/CD
 The repo for this project is avaialble on [GitHub](https://github.com/nathanjnorris/servarr). It contains:
   - The Terraform configurations for [Cloudflare](https://github.com/nathanjnorris/servarr/blob/main/cloudflare.tf), and [GitHub](https://github.com/nathanjnorris/servarr/blob/main/github.tf) itself. 
   - [GitHub Actions workflows](https://github.com/nathanjnorris/servarr/tree/main/.github/workflows)
@@ -129,7 +129,7 @@ I also use Uptime Kuma to publish a [service status dashboard](https://status.na
  
 With a [Plex Pass](https://www.plex.tv/plex-pass/), you can use the [Plex Dash](https://play.google.com/store/apps/details?id=tv.plex.labs.dash&hl=en_NZ) app to monitor host metrics (bandwith, processor and memory) and any current user activity.
 
-## Operations
+## Maintainability
 The system is plug and play - all you need to do is provide the servarr with an ethernet connection and power. On boot, [fstab](https://www.redhat.com/en/blog/etc-fstab) is configured to mount the attached storage. Docker starts by default on Ubuntu, and all the containers are configured to always restart unless manually stopped:
 ```yaml
 services:
