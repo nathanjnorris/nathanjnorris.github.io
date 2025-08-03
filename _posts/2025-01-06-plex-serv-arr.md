@@ -38,7 +38,7 @@ I had previously experimented with a Plex Media Server, having installed the app
 
 ## Networking
 When I was renting in Vancouver, I had no access to my landlord's router that was connected to the ISP. I had a [Double NAT](https://kb.netgear.com/30186/What-is-double-NAT-and-why-is-it-bad) network, and could not publish any ports to the internet direcly. This lead me to utilze the [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/) suite of products, which could allow me to serve traffic through Cloudflare without access to a publicly routable IP address:
-![Diagram showing how the Cloudflare Tunnel integrates with other product in the Zero Trust suite](/assets//img/posts/cloudflare.jpg){: width="972" height="589" .w-90 .normal}
+![Diagram showing how the Cloudflare Tunnel integrates with other product in the Zero Trust suite](/assets/img/posts/cloudflare.jpg)
 
 The containers all currently reside on the Docker default [bridge network](https://docs.docker.com/engine/network/drivers/bridge/). A Cloudflare Tunnel (cloudflared) container that is deployed on that network, which creates outbound-only connections to Cloudflare's global network. Cloudflared is then configured to allow a public DNS records to reach private services on the bridge network:
 
@@ -120,12 +120,12 @@ As a part of this project, I contributed some code to [@and-fm's Cloudflare SSH 
 [Uptime Kuma](https://uptime.kuma.pet/) is a monitoring tool, which I use to monitor for HTTP(S) keyword and container states. 
 Uptime Kuma is integrated with Pushbullet, and whenever a service is unavailable after two 60 second intervals, a notification is sent to my phone:
 
-![Push notification sent when there's service downtime](/assets/img/posts/push.png){: width="972" height="589" .w-75 .normal}
+![Push notification sent when there's service downtime](/assets/img/posts/push.png)
 
 
 I also use Uptime Kuma to publish a [service status dashboard](https://status.nathanjn.com/status/servarr) that is available for users:
  
-![Uptime Kuma's service status dashboard](/assets/img/posts/status.png){: width="972" height="589" .w-90 .normal}
+![Uptime Kuma's service status dashboard](/assets/img/posts/status.png)
  
 With a [Plex Pass](https://www.plex.tv/plex-pass/), you can use the [Plex Dash](https://play.google.com/store/apps/details?id=tv.plex.labs.dash&hl=en_NZ) app to monitor host metrics (bandwith, processor and memory) and any current user activity.
 
