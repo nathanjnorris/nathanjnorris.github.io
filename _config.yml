@@ -94,14 +94,14 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: /cdn-cgi/image/fit=scale-down,format=auto,metadata=none,onerror=redirect,quality=high,slow-connection-quality=medium-low,width=auto
+cdn: https://nathanjn.com/cdn-cgi/image/fit=scale-down,format=auto,metadata=none,onerror=redirect,quality=high,slow-connection-quality=medium-low,width=auto
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/avatar/nn.jpg
+avatar: https://nathanjn.com/cdn-cgi/image/fit=scale-down,format=auto,metadata=none,onerror=redirect,quality=high,slow-connection-quality=medium-low,width=auto/assets/img/avatar/nn.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: https://nathanjn.com/cdn-cgi/image/fit=scale-down,format=auto,metadata=none,onerror=redirect,quality=high,slow-connection-quality=medium-low,height=630/assets/img/avatar/nn.jpg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
