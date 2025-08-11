@@ -38,7 +38,7 @@ I had previously experimented with a Plex Media Server, having installed the app
 
 ## Networking
 When I was renting in Vancouver, I had no access to my landlord's router that was connected to the ISP. I had a [Double NAT](https://kb.netgear.com/30186/What-is-double-NAT-and-why-is-it-bad) network, and could not publish any ports to the internet direcly. This lead me to utilze the [Cloudflare Zero Trust](https://developers.cloudflare.com/cloudflare-one/) suite of products, which could allow me to serve traffic through Cloudflare without access to a publicly routable IP address:
-![Diagram showing how the Cloudflare Tunnel integrates with other product in the Zero Trust suite](/assets/img/posts/cloudflare.jpg)
+![Diagram showing how the Cloudflare Tunnel integrates with other product in the Zero Trust suite](https://cf-assets.www.cloudflare.com/zkvhlag99gkb/63ItdeWGnwFjJ2RbGoI2vf/f0a7f76d54b5d46ffa9a7d6e20d5d054/image3-46.png)
 
 The containers all currently reside on the Docker default [bridge network](https://docs.docker.com/engine/network/drivers/bridge/). A Cloudflare Tunnel (cloudflared) container that is deployed on that network, which creates outbound-only connections to Cloudflare's global network. Cloudflared is then configured to allow a public DNS records to reach private services on the bridge network:
 
